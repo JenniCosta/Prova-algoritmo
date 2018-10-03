@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Gremio</h1>
+    Chapa 1: <input type="text" id="cp1"><br>
+    Chapa 2: <input type="text" id="cp2"><br>
+    Chapa 3: <input type="text" id="cp3"><br>
+    Brancos: <input type="text" id="bra"><br>
+    Nulo : <input type="text" id="nul"><br>
+
+    <button onclick="funcao()">Ver votos</button><br>
+    
+    <p id="Total"></p> 
+    <p id="val"></p>
+    <p id="bra"></p>
+    <p id="nul"></p>
+    <p id="voto1"></p>
+    <p id="voto2"></p>
+    <p id="voto3"></p>
+    <p id="msg1"></p>
+
+    <script>
+    
+    function funcao(){
+        var chapa1 = parseInt(document.getElementById("cp1").value);
+        var chapa2 = parseInt(document.getElementById("cp2").value);
+        var chapa3 = parseInt(document.getElementById("cp3").value);
+        var branco = parseInt(document.getElementById("bra").value);
+        var nulo = parseInt(document.getElementById("nul").value);
+        var valido = chapa1 + chapa2 + chapa3;
+       var total = chapa1 + chapa2 + chapa3 + branco + nulo;
+       var mens1 = "Alcatec é a vencedora!!";
+    
+       
+        document.getElementById("Total").innerHTML=total;
+        document.getElementById("val").innerHTML = valido;
+        document.getElementById("voto1").innerHTML = chapa1;
+        document.getElementById("voto2").innerHTML = chapa2;
+        document.getElementById("voto3").innerHTML = chapa3;
+        
+        if ((chapa1 > chapa2) && (chapa1 > chapa3)){
+            
+            document.getElementById("msg1").innerHTML = mens1;
+        }
+
+
+
+    }
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
