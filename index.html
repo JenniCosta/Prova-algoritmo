@@ -17,14 +17,16 @@
 
     <button onclick="funcao()">Ver votos</button><br>
     
-    <p id="Total"></p> 
-    <p id="val"></p>
-    <p id="bra"></p>
-    <p id="nul"></p>
-    <p id="voto1"></p>
-    <p id="voto2"></p>
-    <p id="voto3"></p>
+Total:    <p id="Total"></p> 
+Votos válidos: <p id="val"></p>
+Votos Brancos:    <p id="bra"></p>
+Votos Nulos:  <p id="nul"></p>
+Votos Alcatec:  <p id="voto1"></p>
+Votos Conecte-se: <p id="voto2"></p>
+Votos Plural:  <p id="voto3"></p>
     <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
 
     <script>
     
@@ -37,6 +39,8 @@
         var valido = chapa1 + chapa2 + chapa3;
        var total = chapa1 + chapa2 + chapa3 + branco + nulo;
        var mens1 = "Alcatec é a vencedora!!";
+       var mens2 = "Conecte-se é a vencedora!!";
+       var mens3 = "Pural é a vencedora!!";
     
        
         document.getElementById("Total").innerHTML=total;
@@ -44,13 +48,21 @@
         document.getElementById("voto1").innerHTML = chapa1;
         document.getElementById("voto2").innerHTML = chapa2;
         document.getElementById("voto3").innerHTML = chapa3;
+        document.getElementById("bra").innerHTML = branco;
+        document.getElementById("nul").innerHTML = nulo;
         
         if ((chapa1 > chapa2) && (chapa1 > chapa3)){
             
             document.getElementById("msg1").innerHTML = mens1;
         }
-
-
+        
+        if((chapa2 > chapa1) && (chapa2 > chapa3)){
+            document.getElementById("msg2").innerHTML = mens2;
+        }
+        
+        if ((chapa3 > chapa1) && (chapa3 > chapa2)){
+            document.getElementById("msg3").innerHTML = mens3;
+        }
 
     }
 
